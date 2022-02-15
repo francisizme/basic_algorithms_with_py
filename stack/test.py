@@ -1,10 +1,11 @@
 import unittest
-import stack as stack_engine
+
+from stack import Stack
 
 
 class TestStack(unittest.TestCase):
     def test_stack(self):
-        my_stack = stack_engine.Stack()
+        my_stack = Stack()
         self.assertIsNone(my_stack.peek())
         my_stack.append(1)
         self.assertEqual(my_stack.peek(), 1)
