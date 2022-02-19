@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 self = "*"
+current = "*"
+linkedlist = "*"
+jupyter = "*"
 
 [dev-packages]
 
