@@ -1,5 +1,5 @@
 import unittest
-from node import Node
+from script import Node
 
 
 class TestNode(unittest.TestCase):
