@@ -2,7 +2,9 @@
 Like a singly linked list, a doubly linked list is comprised of a series of nodes. Each node contains data and two links (or pointers) to the next and previous nodes in the list. The head node is the node at the beginning of the list, and the tail node is the node at the end of the list. The head node’s previous pointer is set to null and the tail node’s next pointer is set to null.
 
 Think of your daily commute on the subway as a real-world example of a doubly linked list. Your home is the head of the list, your place of work is the tail, and every stop in between is another node in the list.
+
 <img src="static/imgs/img.png" style="background:white"/>
+
 ## Adding to the List
 In a doubly linked list, adding to the list is a little complicated as we have to keep track of and set the node’s previous pointer as well as update the tail of the list if necessary.
 ### Adding to the Head
@@ -24,6 +26,7 @@ Due to the extra pointer and tail property, removing the head from a doubly link
 Removing the head involves updating the pointer at the beginning of the list. We will set the previous pointer of the new head (the element directly after the current head) to null, and update the head property of the list. If the head was also the tail, the tail removal process will occur as well.
 ### Removing the Tail
 Similarly, removing the tail involves updating the pointer at the end of the list. We will set the next pointer of the new tail (the element directly before the tail) to null, and update the tail property of the list. If the tail was also the head, the head removal process will occur as well.
+
 <img src="static/imgs/img_2.png" style="background:white"/>
 
 ### Removing from the Middle of the List
@@ -32,6 +35,7 @@ It is also possible to remove a node from the middle of the list. Since that nod
 * We must set the removed node’s following node’s previous pointer to its preceding node
 
 There is no need to change the pointers of the removed node, as updating the pointers of its neighboring nodes will remove it from the list. If no nodes in the list are pointing to it, the node is orphaned.
+
 <img src="static/imgs/img_3.png" style="background:white"/>
 
 # Review
