@@ -3,7 +3,7 @@ import unittest
 from script import LinkedList
 
 
-class TestLinkedList(unittest.TestCase):
+class LinkedListTestCase(unittest.TestCase):
     def test_linked_list(self):
         ll = LinkedList('My')
         ll.insert_beginning('name')

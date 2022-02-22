@@ -3,7 +3,7 @@ import unittest
 from script import Stack
 
 
-class TestStack(unittest.TestCase):
+class StackTestCase(unittest.TestCase):
     def test_stack(self):
         my_stack = Stack()
         self.assertIsNone(my_stack.peek())

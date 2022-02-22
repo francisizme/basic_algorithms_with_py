@@ -2,7 +2,7 @@ import unittest
 from script import Node
 
 
-class TestNode(unittest.TestCase):
+class NodeTestCase(unittest.TestCase):
     def test_node(self):
         node1 = Node(1)
         node2 = Node(2)
