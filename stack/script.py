@@ -14,10 +14,11 @@ class _Node:
 
 
 class Stack:
-    def __init__(self, limit=1000):
+    def __init__(self, **kwargs):
         self.__top_item = None
-        self.__limit = limit
         self.__size = 0
+        self.__limit = kwargs.get('limit', 1000)
+        self.__name = kwargs.get('name', None)
 
     def peek(self):
         if not self.is_empty():
@@ -41,9 +42,24 @@ class Stack:
             return item_to_remove.get_value()
         print('The stack is empty!')
 
+    def get_name(self):
+        return self.__name
+
     def has_space(self):
         return self.__size < self.__limit
 
     def is_empty(self):
         return self.__size == 0
+
+    def get_size(self):
+        return self.__size
+
+    def print_items(self):
+        pointer = self.__top_item
+        print_list = []
+        while pointer:
+            print_list.append(pointer.get_value())
+            pointer = pointer.get_next_node()
+        print_list.reverse()
+        print("{0} Stack: {1}".format(self.get_name(), print_list))
 

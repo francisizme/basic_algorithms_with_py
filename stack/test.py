@@ -16,12 +16,12 @@ def empty_s():
 
 @pytest.fixture()
 def limit_s():
-   return Stack(1)
+    return Stack(limit=1)
 
 
 @pytest.fixture()
 def full_s():
-    s = Stack(1)
+    s = Stack(limit=1, name='full_stack')
     s.push(1)
     return s
 
@@ -61,3 +61,22 @@ def test_pop(full_s):
     full_s.pop()
     assert captured_output.getvalue().strip() == 'The stack is empty!'
     sys.stdout = sys.__stdout__
+
+
+def test_get_name():
+    s = Stack(name='s')
+    assert s.get_name() == 's'
+
+
+def test_print_items(full_s):
+    captured_output = io.StringIO()
+    sys.stdout = captured_output
+    full_s.print_items()
+    assert captured_output.getvalue().strip() == 'full_stack Stack: [1]'
+    sys.stdout = sys.__stdout__
+
+
+def test_size(empty_s):
+    assert empty_s.get_size() == 0
+    empty_s.push(1)
+    assert empty_s.get_size() == 1
