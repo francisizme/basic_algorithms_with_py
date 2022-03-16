@@ -42,7 +42,7 @@ class Queue:
             if self.is_empty():
                 self.__head = item_to_add
             else:
-                self.__head.set_next_node(item_to_add)
+                self.__tail.set_next_node(item_to_add)
             self.__tail = item_to_add
             self.__size += 1
         else:
